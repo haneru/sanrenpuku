@@ -1,2 +1,13 @@
-<h1>Fields#new</h1>
-<p>Find me in app/views/fields/new.html.erb</p>
+<h1>レース場新規作成</h1>
+<%= form_for @field do |f| %>
+  <p>
+    <%= f.label :nama%>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :code %>
+    <%= f.text_field :code %>
+  </p>
+  <%= link_to 'キャンセル', fields_path %>
+  <%= f.submit '作成' %>
+<% end %>

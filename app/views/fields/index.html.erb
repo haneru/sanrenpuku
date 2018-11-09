@@ -1,2 +1,35 @@
-<h1>Fields#index</h1>
-<p>Find me in app/views/fields/index.html.erb</p>
+  <h1>レース場一覧</h1>
+
+  <div class='article'>
+    <div class='card'>
+      <div class='card-haeder text-center'>
+        <p>
+          <%= link_to '新規作成', new_field_path, class: 'btn btn-primary' %>
+        </p>
+      </div>
+      <div class='card-body'>
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>コード</th>
+              <th>レース場名</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @fields.each do |field| %>
+              <tr>
+                <td><%= field.code%></td>
+                <td><%= field.name%></td>
+                <td><%= link_to '詳細', field, class: 'btn btn-default btn-lg btn-block' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class='card-footer'>
+        <%= paginate @fields %>
+      </div>
+    </div>
+  </div>
+</div>
