@@ -1,0 +1,28 @@
+<div class='card mt-5'>
+  <div class='card-header'>
+    レース場、レース番号選択
+  </div>
+  <%= form_for @result, url: result_results_url do |f| %>
+    <div class='card-body'>
+      <%= f.hidden_field :collect_date, required: true %>
+      <p>
+        <%= f.label :field_id, 'レース場' %>
+        <%= f.collection_select :field_id, @fields, :id, :name, required: true %>
+      </p>
+      <p>
+        <%= f.label :race_number, 'レース番号' %>
+        <%= f.select :race_number, 1..12, required: true %>
+      </p>
+    </div>
+    <div class='card-footer'>
+      <div class='row'>
+        <div class='col-md-6'>
+          <%= link_to 'キャンセル', results_path, class: 'btn btn-block' %>
+        </div>
+        <div class='col-md-6'>
+          <%= f.submit '集計', class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
