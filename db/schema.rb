@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_10_093345) do
+ActiveRecord::Schema.define(version: 2019_05_05_154404) do
 
   create_table "fields", force: :cascade do |t|
     t.string "name"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 2018_11_10_093345) do
   create_table "results", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "first_cource"
+    t.float "second_cource"
+    t.float "third_cource"
+    t.float "fourth_cource"
+    t.float "fifth_cource"
+    t.float "sixth_cource"
+    t.integer "field_id"
+    t.integer "race_number"
+    t.datetime "collect_date"
   end
 
 end

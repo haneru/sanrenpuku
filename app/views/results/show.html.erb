@@ -1,0 +1,51 @@
+<h1 class="mt-5">レース予想</h1>
+<div>
+  <p>
+  レース日程
+  <%= @result.collect_date.strftime('%Y/%m/%d') %>
+  </p>
+  <p>
+  レース場名
+  <%= @result.field.name %>
+  </p>
+  <p>
+  レース番号
+  <%= @result.race_number %>
+  </p>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th scope='col'>舟番号</th>
+        <th scope='col'>勝率</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @result.ranking.each do |key, value|%>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class='card'>
+    <div class='card-footer'>
+      <div class='row'>
+        <div class='col-md-4'>
+          <%= form_for @result, action: :update do |f| %>
+            <%= f.hidden_field :field_id %>
+            <%= f.hidden_field :collect_date %>
+            <%= f.hidden_field :race_number %>
+            <%= f.submit '再集計する', class: 'btn btn-warning' %>
+          <% end %>
+        </div>
+        <div class='col-md-4'>
+          <%= link_to 'TOPに戻る', root_path, class: 'btn btn-primary' %>
+        </div>
+        <div class='col-md-4'>
+          <%= link_to '削除する', @result, method: :delete, class: 'btn btn-danger', data: { confirm: '本当に削除しますか？' } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

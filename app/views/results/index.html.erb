@@ -3,7 +3,32 @@
 <div class='article'>
   <div class='card'>
     <div class='card-body text-center'>
-      <%= link_to 'レース予想', new_result_path, class: 'btn btn-primary' %>
+      <div class='row'>
+        <div class='col-md-4 offset-md-4'>
+          <%= link_to 'レース予想', new_result_path, class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row text-center'>
+    <div class='col-md-10 offset-md-1'>
+      <table class='table table-responsive mt-3'>
+        <thead>
+          <tr>
+            <th>開催日
+            <th>レース場
+            <th>レース番号
+            <th>
+        <tbody>
+          <% @results.each do |result| %>
+            <tr>
+              <td><%= result.collect_date.strftime('%Y/%m/%d') %>
+              <td><%= result.field.name %>
+              <td><%= result.race_number %>
+              <td><%= link_to '詳細', result, class: 'btn btn-default' %>
+          <% end %>
+      </table>
+      <%= paginate @results %>
     </div>
   </div>
 </div>

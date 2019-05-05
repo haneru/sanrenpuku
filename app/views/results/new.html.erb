@@ -1,4 +1,6 @@
-<div class='card mt-5'>
+<h1 class="mt-5">レース予想</h1>
+
+<div class='card'>
   <div class='card-header'>
     日時選択
   </div>
@@ -8,10 +10,10 @@
     </div>
     <div class='card-footer'>
       <div class='row'>
-        <div class='col-md-6'>
-          <%= link_to 'キャンセル', results_path, class: 'btn btn-block' %>
+        <div class='col-md-4 offset-md-2'>
+          <%= link_to 'キャンセル', root_path, class: 'btn btn-block' %>
         </div>
-        <div class='col-md-6'>
+        <div class='col-md-4'>
           <%= f.submit '日時を決定', class: 'btn btn-primary btn-block' %>
         </div>
       </div>

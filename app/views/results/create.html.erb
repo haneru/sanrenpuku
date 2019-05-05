@@ -1,4 +1,6 @@
-<div class='card mt-5'>
+<h1 class="mt-5">レース予想</h1>
+
+<div class='card'>
   <div class='card-header'>
     レース場、レース番号選択
   </div>
@@ -7,19 +9,19 @@
       <%= f.hidden_field :collect_date, required: true %>
       <p>
         <%= f.label :field_id, 'レース場' %>
-        <%= f.collection_select :field_id, @fields, :id, :name, required: true %>
+        <%= f.collection_select :field_id, @fields, :id, :name, required: true, class: 'form-control'%>
       </p>
       <p>
         <%= f.label :race_number, 'レース番号' %>
-        <%= f.select :race_number, 1..12, required: true %>
+        <%= f.select :race_number, 1..12, required: true, class: 'form-control' %>
       </p>
     </div>
     <div class='card-footer'>
       <div class='row'>
-        <div class='col-md-6'>
-          <%= link_to 'キャンセル', results_path, class: 'btn btn-block' %>
+        <div class='col-md-4 offset-md-2'>
+          <%= link_to 'キャンセル', new_result_path, class: 'btn btn-block' %>
         </div>
-        <div class='col-md-6'>
+        <div class='col-md-4'>
           <%= f.submit '集計', class: 'btn btn-primary btn-block' %>
         </div>
       </div>
