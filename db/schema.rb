@@ -10,13 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_05_154404) do
+ActiveRecord::Schema.define(version: 2019_05_05_181051) do
 
   create_table "fields", force: :cascade do |t|
     t.string "name"
     t.integer "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "racers", force: :cascade do |t|
+    t.float "win_per"
+    t.float "two_ren_per"
+    t.float "three_ren_per"
+    t.float "first_per"
+    t.float "second_per"
+    t.float "third_per"
+    t.float "fourth_per"
+    t.float "fifth_per"
+    t.float "sixth_per"
+    t.float "first_cource"
+    t.float "second_cource"
+    t.float "third_cource"
+    t.float "fourth_cource"
+    t.float "fifth_cource"
+    t.float "sixth_cource"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "racer_number"
   end
 
   create_table "results", force: :cascade do |t|

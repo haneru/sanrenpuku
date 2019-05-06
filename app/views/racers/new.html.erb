@@ -1,0 +1,19 @@
+<h1 class="mt-5">選手集計</h1>
+
+<div class='card'>
+  <%= form_for @racer do |f| %>
+    <div class='card-body'>
+      <%= f.text_field :racer_number, class: 'form-control' %>
+    </div>
+    <div class='card-footer'>
+      <div class='row'>
+        <div class='col-md-4 offset-md-2'>
+          <%= link_to 'キャンセル', racers_path, class: 'btn btn-block' %>
+        </div>
+        <div class='col-md-4'>
+          <%= f.submit '日時を決定', class: 'btn btn-primary btn-block' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

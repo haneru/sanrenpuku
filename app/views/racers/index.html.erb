@@ -1,0 +1,33 @@
+<h1 class="mt-5">選手一覧</h1>
+
+<div class='article'>
+  <div class='card'>
+    <div class='card-body text-center'>
+      <%= form_for @racer, action: :collect do |f| %>
+        <%= f.submit '全選手のデータを集計', class: 'btn btn-primary', data: { confirm: '集計には時間がかかりますがよろしいでしょうか？' } %>
+      <% end %>
+      <div class="mt-3">
+        <%= link_to '新規選手集計', new_racer_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+  <div class='row text-center'>
+    <div class='col-md-6 offset-md-3'>
+      <table class='table table-responsive mt-3'>
+        <thead>
+          <tr>
+            <th nowrap>選手番号
+            <th nowrap>勝率
+            <th>
+        <tbody>
+          <% @racers.each do |racer| %>
+            <tr>
+              <td><%= racer.racer_number %>
+              <td><%= racer.win_per %>
+              <td><%= link_to '詳細', racer, class: 'btn btn-default' %>
+          <% end %>
+      </table>
+      <%= paginate @racers %>
+    </div>
+  </div>
+</div>

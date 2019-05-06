@@ -1,0 +1,74 @@
+<h1 class="mt-5">選手詳細</h1>
+<div>
+  <p>
+  選手番号
+  <%= @racer.racer_number %>
+  </p>
+  <table class='table'>
+    <tbody>
+      <tr>
+        <th scope='col'>勝率</th>
+        <td><%= @racer.win_per %>
+      <tr>
+        <th scope='col'>2連対率</th>
+        <td><%= @racer.two_ren_per %>
+      <tr>
+        <th scope='col'>3連対率</th>
+        <td><%= @racer.three_ren_per %>
+      <tr>
+        <th scope='col'>1着</th>
+        <td><%= @racer.first_per %>
+      <tr>
+        <th scope='col'>2着</th>
+        <td><%= @racer.second_per %>
+      <tr>
+        <th scope='col'>3着</th>
+        <td><%= @racer.third_per %>
+      <tr>
+        <th scope='col'>4着</th>
+        <td><%= @racer.fourth_per %>
+      <tr>
+        <th scope='col'>5着</th>
+        <td><%= @racer.fifth_per %>
+      <tr>
+        <th scope='col'>6着</th>
+        <td><%= @racer.sixth_per %>
+      <tr>
+        <th scope='col'>1コース別3連対率</th>
+        <td><%= @racer.first_cource %>
+      <tr>
+        <th scope='col'>2コース別3連対率</th>
+        <td><%= @racer.second_cource %>
+      <tr>
+        <th scope='col'>3コース別3連対率</th>
+        <td><%= @racer.third_cource %>
+      <tr>
+        <th scope='col'>4コース別3連対率</th>
+        <td><%= @racer.fourth_cource %>
+      <tr>
+        <th scope='col'>5コース別3連対率</th>
+        <td><%= @racer.fifth_cource %>
+      <tr>
+        <th scope='col'>6コース別3連対率</th>
+        <td><%= @racer.sixth_cource %>
+    </thead>
+  </table>
+  <div class='card'>
+    <div class='card-footer'>
+      <div class='row'>
+        <div class='col-md-4'>
+          <%= form_for @racer, action: :update do |f| %>
+            <%= f.hidden_field :racer_number %>
+            <%= f.submit '再集計する', class: 'btn btn-warning' %>
+          <% end %>
+        </div>
+        <div class='col-md-4'>
+          <%= link_to '選手一覧に戻る', racers_path, class: 'btn btn-primary' %>
+        </div>
+        <div class='col-md-4'>
+          <%= link_to '削除する', @racer, method: :delete, class: 'btn btn-danger', data: { confirm: '本当に削除しますか？' } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

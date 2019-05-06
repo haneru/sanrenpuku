@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  win_per: 1.5
+  two_ren_per: 1.5
+  three_ren_per: 1.5
+  first_per: 1.5
+  second_per: 1.5
+  third_per: 1.5
+  fourth_per: 1.5
+  fifth_per: 1.5
+  sixth_per: 1.5
+  first_cource: 1.5
+  second_cource: 1.5
+  third_cource: 1.5
+  fourth_cource: 1.5
+  fifth_cource: 1.5
+  sixth_cource: 1.5
+
+two:
+  win_per: 1.5
+  two_ren_per: 1.5
+  three_ren_per: 1.5
+  first_per: 1.5
+  second_per: 1.5
+  third_per: 1.5
+  fourth_per: 1.5
+  fifth_per: 1.5
+  sixth_per: 1.5
+  first_cource: 1.5
+  second_cource: 1.5
+  third_cource: 1.5
+  fourth_cource: 1.5
+  fifth_cource: 1.5
+  sixth_cource: 1.5
