@@ -16,8 +16,8 @@ class RacersController < ApplicationController
     ActiveRecord::Base.transaction do
       @racer.collect
       @racer.save! if @racer.valid?
+      redirect_to @racer
     end
-    redirect_to @racer
   end
 
   def show; end
@@ -31,23 +31,23 @@ class RacersController < ApplicationController
         @racer.save! if @racer.valid?
         Mikazuki.rand_sleep(40)
       end
+      redirect_to :index
     end
-    redirect_to :index
   end
 
   def update
     ActiveRecord::Base.transaction do
       @racer.collect
       @racer.save! if @racer.valid?
+      redirect_to @racer
     end
-    redirect_to @racer
   end
 
   def destroy
     ActiveRecord::Base.transaction do
       @racer.destroy!
+      redirect_to racers_url
     end
-    redirect_to :index
   end
 
   private
